@@ -4,74 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <script>
-        function checkClassTime() {
-            const now = new Date();
-            const currentDay = now.getDay();
-            const currentHour = now.getHours();
-            const currentMinute = now.getMinutes();
-            const currentTotalMinutes = currentHour * 60 + currentMinute;
-
-            console.log(`Current Time: ${currentHour}:${currentMinute} (Total Minutes: ${currentTotalMinutes})`);
-
-            const boxes = document.querySelectorAll('.class-box');
-
-            boxes.forEach(box => {
-                const start = box.getAttribute('data-start');
-                const end = box.getAttribute('data-end');
-                const days = box.getAttribute('data-days').split(',').map(Number);
-
-                const [startH, startM] = start.split(':').map(
-                    Number);
-                const [endH, endM] = end.split(':').map(Number);
-                let startMinutes = startH * 60 + startM;
-                let endMinutes = endH * 60 + endM;
-
-
-                if (endMinutes <= startMinutes) {
-                    endMinutes += 24 *
-                        60;
-                }
-
-                console.log(`Class: ${box.querySelector('h2').textContent}`);
-                console.log(`Start Time: ${startH}:${startM} (Total Minutes: ${startMinutes})`);
-                console.log(`End Time: ${endH}:${endM} (Total Minutes: ${endMinutes})`);
-
-
-                const isToday = days.includes(currentDay);
-                console.log(`Is Today: ${isToday}`);
-
-                const isNow = currentTotalMinutes >= startMinutes && currentTotalMinutes < endMinutes;
-                console.log(`Is Now: ${isNow}`);
-
-                if (isToday && isNow) {
-                    box.classList.add('active-class');
-                    box.style.boxShadow = "0 10px 30px rgba(255, 255, 150, 0.6)";
-                } else {
-                    box.classList.remove('active-class');
-                    box.style.boxShadow = '';
-                }
-            });
-        }
-
         function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i;
-            }
-            return i;
+            return i < 10 ? "0" + i : i;
         }
 
         function startTime() {
-            const today = new Date();
-            let h = today.getHours();
-            let m = today.getMinutes();
-            const meridiem = h >= 12 ? "PM" : "AM";
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var meridiem = h >= 12 ? "PM" : "AM";
 
-            h = h % 12 || 12;
+            h = h % 12 || 12; // convert 24-hour to 12-hour format
             m = checkTime(m);
 
             document.getElementById('time').innerHTML = h + ":" + m + " " + meridiem;
 
-            checkClassTime();
             setTimeout(startTime, 500);
         }
 
@@ -84,24 +31,24 @@
 </head>
 
 <body>
-    <div class="time-container" id="time" style="text-align: center; padding-top: 30px; margin-bottom: 50px;
-    font-size: 2em;"></div>
+    <div class="time-container" id="time"
+        style="text-align: center; padding-top: 30px; margin-bottom: 50px; font-size: 2em;"></div>
     <div class="container">
         <div class="box-container">
-            <div class="cisco-container class-box" data-start="10:30" data-end="12:00" data-days="1,4">
+            <div class="cisco-container">
                 <h2>CISCO</h2>
                 <sub>Monday | Thursday</sub><br>
                 <sub>10:30AM - 12:00PM</sub><br><br><br>
                 <a href=""><button class="btn">Zoom</button></a>
             </div>
-            <div class="spi-container class-box" data-start="12:01" data-end="1:30" data-days="1,4">
+            <div class="spi-container">
                 <h2>Social and Professional Issue</h2>
                 <sub>Monday | Thursday</sub><br>
                 <sub>12:00PM - 1:30PM</sub><br><br><br>
                 <a href="https://icct-edu-ph.zoom.us/j/94842443859?pwd=7UrBMyr4A8RfAAhtHFLLMEFvll919t.1#success"><button
                         class="btn">Zoom</button></a>
             </div>
-            <div class="im-container class-box" data-start="1:30" data-end="3:00" data-days="1,4">
+            <div class="im-container">
                 <h2>Information Management</h2>
                 <sub>Monday | Thursday</sub><br>
                 <sub>1:30PM - 3:00PM</sub><br><br><br>
@@ -109,14 +56,14 @@
             </div>
             <div class="bottom-position">
                 <div class="bottom-container">
-                    <div class="rizal-container class-box" data-start="10:30" data-end="12:00" data-days="2,5">
+                    <div class="rizal-container">
                         <h2>Rizal Works</h2>
                         <sub>Tuesday | Friday</sub><br>
                         <sub>10:30AM - 12:00PM</sub><br><br><br>
                         <a href="https://icct-edu-ph.zoom.us/j/94460271802?pwd=lqnJ56UEmCFWtr7ItwVyUc3mCtRMCy.1"><button
                                 class="btn">Zoom</button></a>
                     </div>
-                    <div class="quantitative-container class-box" data-start="12:00" data-end="1:30" data-days="2,5">
+                    <div class="quantitative-container">
                         <h2>Quantitative Method</h2>
                         <sub>Tuesday | Friday</sub><br>
                         <sub>12:00PM - 1:30 PM</sub><br><br><br>

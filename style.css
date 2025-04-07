@@ -9,12 +9,6 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.active-class {
-    box-shadow: 0 10px 30px rgba(255, 255, 150, 0.6);
-    transform: scale(1.05);
-    z-index: 2;
-}
-
 .container {
     margin-top: 100px;
     display: flex;
