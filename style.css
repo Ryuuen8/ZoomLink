@@ -1,0 +1,188 @@
+body {
+    padding: 0;
+    margin: 0;
+    color: white;
+    background-image: linear-gradient(to right bottom, #6780a4, #5b889a, #678c8c, #7b8e83, #8b8e85);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+}
+
+.active-class {
+    box-shadow: 0 10px 30px rgba(255, 255, 150, 0.6);
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.container {
+    margin-top: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .time-container {
+    margin-left: 100px;
+}
+
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 250px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.box-container .im-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgb(103, 128, 164);
+    color: rgb(221, 221, 221);
+}
+
+
+.box-container .spi-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgb(103, 128, 164);
+    color: rgb(221, 221, 221);
+}
+
+
+.box-container .cisco-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgb(103, 128, 164);
+    color: rgb(221, 221, 221);
+}
+
+.bottom-position {
+    margin-top: 450px;
+    position: fixed;
+    z-index: 2;
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 590px;
+}
+
+.bottom-container .rizal-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgb(103, 128, 164);
+    color: rgb(221, 221, 221);
+}
+
+
+.bottom-container .quantitative-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgb(103, 128, 164);
+    color: rgb(221, 221, 221);
+
+}
+
+.btn {
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 25px;
+    background-color: #84b3c5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.10);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Responsive fixes */
+@media (max-width: 1200px) {
+    .box-container {
+        gap: 100px;
+    }
+
+    .bottom-container {
+        gap: 100px;
+    }
+
+    .container .time-container {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .box-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .bottom-container {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .bottom-position {
+        position: relative;
+        margin-top: 100px;
+    }
+
+    .container .time-container {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+
+@media (max-height: 1200px) {
+    .box-container {
+        gap: 100px;
+    }
+
+    .bottom-container {
+        gap: 100px;
+    }
+
+    .container .time-container {
+        margin-left: 30px;
+    }
+}
+
+@media (max-height: 800px) {
+
+    .box-container,
+    .bottom-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .bottom-position {
+        position: relative;
+        margin-top: 100px;
+    }
+
+    .container .time-container {
+        margin-left: 0;
+        text-align: center;
+    }
+}
