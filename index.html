@@ -10,14 +10,38 @@
 
         function startTime() {
             var today = new Date();
+            var day;
+            switch (today.getDay()) {
+                case 0:
+                    day = "Sunday";
+                    break;
+                case 1:
+                    day = "Monday";
+                    break;
+                case 2:
+                    day = "Tuesday";
+                    break;
+                case 3:
+                    day = "Wednesday";
+                    break;
+                case 4:
+                    day = "Thursday";
+                    break;
+                case 5:
+                    day = "Friday";
+                    break;
+                case 6:
+                    day = "Saturday";
+                    break;
+            }
             var h = today.getHours();
             var m = today.getMinutes();
             var meridiem = h >= 12 ? "PM" : "AM";
 
-            h = h % 12 || 12; // convert 24-hour to 12-hour format
+            h = h % 12 || 12;
             m = checkTime(m);
 
-            document.getElementById('time').innerHTML = h + ":" + m + " " + meridiem;
+            document.getElementById('time').innerHTML = day + ", " + h + ":" + m + " " + meridiem;
 
             setTimeout(startTime, 500);
         }
@@ -38,8 +62,10 @@
             <div class="cisco-container">
                 <h2>CISCO</h2>
                 <sub>Monday | Thursday</sub><br>
-                <sub>10:30AM - 12:00PM</sub><br><br><br>
+                <sub>10:30AM - 12:00PM</sub><br><br><br><br>
                 <a href=""><button class="btn">Zoom</button></a>
+                <a href="https://icct.blackboard.com/ultra/courses/_1162_1/outline"><button
+                        class="btn">Blackboard</button></a>
             </div>
             <div class="spi-container">
                 <h2>Social and Professional Issue</h2>
@@ -47,12 +73,16 @@
                 <sub>12:00PM - 1:30PM</sub><br><br><br>
                 <a href="https://icct-edu-ph.zoom.us/j/94842443859?pwd=7UrBMyr4A8RfAAhtHFLLMEFvll919t.1#success"><button
                         class="btn">Zoom</button></a>
+                <a href="https://icct.blackboard.com/ultra/courses/_1301_1/outline"><button
+                        class="btn">Blackboard</button></a>
             </div>
             <div class="im-container">
                 <h2>Information Management</h2>
                 <sub>Monday | Thursday</sub><br>
                 <sub>1:30PM - 3:00PM</sub><br><br><br>
                 <a href=""><button class="btn">Zoom</button></a>
+                <a href="https://icct.blackboard.com/ultra/courses/_1248_1/outline"><button
+                        class="btn">Blackboard</button></a>
             </div>
             <div class="bottom-position">
                 <div class="bottom-container">
@@ -62,12 +92,16 @@
                         <sub>10:30AM - 12:00PM</sub><br><br><br>
                         <a href="https://icct-edu-ph.zoom.us/j/94460271802?pwd=lqnJ56UEmCFWtr7ItwVyUc3mCtRMCy.1"><button
                                 class="btn">Zoom</button></a>
+                        <a href="https://classroom.google.com/c/NzM3ODY0MDAyNDk0"><button
+                                class="btn">GClass</button></a>
                     </div>
                     <div class="quantitative-container">
                         <h2>Quantitative Method</h2>
                         <sub>Tuesday | Friday</sub><br>
                         <sub>12:00PM - 1:30 PM</sub><br><br><br>
                         <a href=""><button class="btn">Zoom</button></a>
+                        <a href="https://icct.blackboard.com/ultra/courses/_1271_1/outline"><button
+                                class="btn">Blackboard</button></a>
                     </div>
                 </div>
             </div>
