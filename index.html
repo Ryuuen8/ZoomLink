@@ -8,65 +8,6 @@
             return i < 10 ? "0" + i : i;
         }
 
-        function highlightClass() {
-            var today = new Date();
-            var h = today.getHours();
-            var m = today.getMinutes();
-            var day = today.getDay(); // Get the current day (0 - Sunday, 1 - Monday, etc.)
-
-            // Convert current time to minutes since midnight (for comparison)
-            var currentTime = h * 60 + m;
-
-            // Remove previous highlights
-            var classContainers = document.querySelectorAll('.class-container');
-            classContainers.forEach(function (container) {
-                container.classList.remove('highlight');
-            });
-
-            // Define the class times (in minutes since midnight)
-            var classTimes = [{
-                    name: 'cisco',
-                    days: [1, 4],
-                    start: 630,
-                    end: 720
-                }, // 10:30AM - 12:00PM
-                {
-                    name: 'spi',
-                    days: [1, 4],
-                    start: 720,
-                    end: 810
-                }, // 12:00PM - 1:30PM
-                {
-                    name: 'im',
-                    days: [1, 4],
-                    start: 810,
-                    end: 900
-                }, // 1:30PM - 3:00PM
-                {
-                    name: 'rizal',
-                    days: [2, 5],
-                    start: 630,
-                    end: 720
-                }, // 10:30AM - 12:00PM
-                {
-                    name: 'quantitative',
-                    days: [2, 5],
-                    start: 720,
-                    end: 810
-                }, // 12:00PM - 1:30PM
-            ];
-
-            // Loop through the class times and check if it's the current class time
-            classTimes.forEach(function (classTime) {
-                // Check if today is one of the class days and the current time is within the class time range
-                if (classTime.days.includes(day) && currentTime >= classTime.start && currentTime < classTime
-                    .end) {
-                    // Highlight the class by adding the 'highlight' class
-                    document.getElementById(classTime.name).classList.add('highlight');
-                }
-            });
-        }
-
         function startTime() {
             var today = new Date();
             var day;
@@ -102,7 +43,6 @@
 
             document.getElementById('time').innerHTML = day + ", " + h + ":" + m + " " + meridiem;
 
-            highlightClass(); // Highlight the current class based on the time
             setTimeout(startTime, 500);
         }
 
@@ -112,14 +52,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Zoom Link</title>
+    <title>LFCA233N004</title>
 
-    <style>
-        .highlight {
-            background-color: #ffcc00;
-            border-radius: 10px;
-        }
-    </style>
 </head>
 
 <body>
