@@ -109,7 +109,6 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-/* Responsive fixes */
 @media (max-width: 1200px) {
     .box-container {
         gap: 100px;
